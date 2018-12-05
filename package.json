@@ -1,0 +1,25 @@
+{
+  "name": "demo.astroboy.ts",
+  "version": "1.0.0",
+  "description": "RT",
+  "main": "index.js",
+  "scripts": {
+    "start": "ast dev --ts --inspect=64001 --tsconfig ./tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ws-node/demo.astroboy.ts.git"
+  },
+  "author": "bigmogician",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ws-node/demo.astroboy.ts/issues"
+  },
+  "homepage": "https://github.com/ws-node/demo.astroboy.ts#readme",
+  "devDependencies": {
+    "astroboy-cli": "^0.0.8",
+    "ts-node": "^7.0.1",
+    "tslint": "5.11.0",
+    "typescript": "3.2.1"
+  }
+}
