@@ -1,0 +1,2 @@
+# demo.astroboy.ts
+RT
