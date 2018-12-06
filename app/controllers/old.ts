@@ -1,4 +1,4 @@
-import { Router, API, BaseClass } from "astroboy.ts";
+import { Router, API, BaseClass, Inject } from "astroboy.ts";
 import OldService from "../services/old";
 
 interface GetQuery {
@@ -9,6 +9,8 @@ interface GetQuery {
 @Router("old")
 class OldController extends BaseClass {
 
+  @Inject() private readonly oldSrv!: OldService;
+
   constructor(ctx) {
     super(ctx);
   }
@@ -16,12 +18,11 @@ class OldController extends BaseClass {
   @API("GET", "get")
   public Get() {
     const { id, name } = this.ctx.query as GetQuery;
-    const old = new OldService(this.ctx);
     this.ctx.type = "application/json";
     this.ctx.body = JSON.stringify({
       id,
       name,
-      url: old.getUrl()
+      url: this.oldSrv.getUrl()
     });
   }
 
