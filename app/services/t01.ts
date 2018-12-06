@@ -1,4 +1,4 @@
-import { Injectable, Context } from "astroboy.ts";
+import { Injectable, Context, injectScope } from "astroboy.ts";
 import T05Service from "./t05";
 import T06Service from "./t06";
 import T07Service from "./t07";
@@ -7,7 +7,7 @@ import T04Service from "./t04";
 import T03Service from "./t03";
 import T02Service from "./t02";
 
-@Injectable()
+@Injectable({})
 class T01Service {
 
   constructor(

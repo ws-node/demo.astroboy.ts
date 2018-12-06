@@ -2,6 +2,7 @@
 import { createConfig } from "astroboy.ts";
 
 interface DemoOptions {
+  /** ccccc */
   key01: number;
   key02: string;
 }
