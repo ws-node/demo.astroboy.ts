@@ -55,12 +55,24 @@ class TestController {
     const { ctx } = this.base;
     const { id, name } = params;
     ctx.type = "application/json";
-    ctx.body = JSON.stringify({
+    return new JsonResult({
       id,
       name,
       url: ctx.url,
     });
   }
+
+  // @GET("get")
+  // public Get(@FromParams() params: GetQuery) {
+  //   const { ctx } = this.base;
+  //   const { id, name } = params;
+  //   ctx.type = "application/json";
+  //   ctx.body = JSON.stringify({
+  //     id,
+  //     name,
+  //     url: ctx.url,
+  //   });
+  // }
 
   @POST("post/:type")
   public async Post(@FromParams() params: ClassQuery, @FromBody() { id, name }: PostData) {
