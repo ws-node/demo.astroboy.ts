@@ -1,6 +1,7 @@
 import TestService from "../services/test";
 import Test02Service from "../services/test02";
 import BusinessContext from "../services/business-context";
+import DataService from "../services/Data";
 import {
   Controller, Configs, AstroboyContext,
   ENV, JsonResult, GET, POST, FromParams,
@@ -45,6 +46,7 @@ class TestController {
     private configs: Configs,
     private base: AstroboyContext<{ fakeId: string; }>,
     private business: BusinessContext,
+    private data: DataService,
     private test: TestService,
     private test02: Test02Service) {
 
@@ -83,6 +85,7 @@ class TestController {
       type,
       id2,
       isTrue,
+      data: this.data.stamp,
       config: {
         str_opt: this.configs.get(STR_OPT),
         demo_options: this.configs.get(DEMO_OPTIONS)
