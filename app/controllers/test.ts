@@ -76,9 +76,30 @@ class TestController {
   //   });
   // }
 
+  // @POST("post/:type")
+  // public async Post(@FromParams() params: ClassQuery, @FromBody() { id, name }: PostData) {
+  //   const { type, id: id2, isTrue } = params;
+  //   return new JsonResult({
+  //     id,
+  //     name,
+  //     type,
+  //     id2,
+  //     isTrue,
+  //     data: this.data.stamp,
+  //     config: {
+  //       str_opt: this.configs.get(STR_OPT),
+  //       demo_options: this.configs.get(DEMO_OPTIONS)
+  //     }
+  //   });
+  // }
+
   @POST("post/:type")
-  public async Post(@FromParams() params: ClassQuery, @FromBody() { id, name }: PostData) {
-    const { type, id: id2, isTrue } = params;
+  public async Post(
+    @Params("type") type: string,
+    @Params("id") id2: number,
+    @Params("isTrue") isTrue: boolean,
+    @FromBody() body: PostData) {
+    const { id, name } = body;
     return new JsonResult({
       id,
       name,
@@ -92,21 +113,6 @@ class TestController {
       }
     });
   }
-
-  // @POST("post/:type")
-  // public async Post(@Params("type") type, @Params("id") id2, @FromBody() body: PostData) {
-  //   const { id, name } = body;
-  //   return new JsonResult({
-  //     id,
-  //     name,
-  //     type,
-  //     id2,
-  //     config: {
-  //       str_opt: this.configs.get(STR_OPT),
-  //       demo_options: this.configs.get(DEMO_OPTIONS)
-  //     }
-  //   });
-  // }
 
   @GET("get2/:fuck")
   public async GetMore(@FromParams() params: GetQuery) {
