@@ -1,7 +1,10 @@
 import TestService from "../services/test";
 import Test02Service from "../services/test02";
 import BusinessContext from "../services/business-context";
-import { Controller, API, Configs, AstroboyContext, ENV, JsonResult } from "astroboy.ts";
+import {
+  Controller, Configs, AstroboyContext,
+  ENV, JsonResult, GET, POST, FromParams, FromBody
+} from "astroboy.ts";
 import { STR_OPT } from "../../config/options/strOpt";
 import { DEMO_OPTIONS } from "../../config/options/demo";
 
@@ -28,9 +31,10 @@ class TestController {
 
   }
 
-  @API("GET", "get")
-  public Get({ id, name }: GetQuery) {
+  @GET("get")
+  public Get(@FromParams() params: GetQuery) {
     const { ctx } = this.base;
+    const { id, name } = params;
     ctx.type = "application/json";
     ctx.body = JSON.stringify({
       id,
@@ -39,8 +43,10 @@ class TestController {
     });
   }
 
-  @API("POST", "post/:type")
-  public async Post({ id, name }: PostData, { type, id: id2 }) {
+  @POST("post/:type")
+  public async Post(@FromParams() params, @FromBody() body: PostData) {
+    const { id, name } = body;
+    const { type, id: id2 } = params;
     return new JsonResult({
       id,
       name,
@@ -53,8 +59,9 @@ class TestController {
     });
   }
 
-  @API("GET", "get2/:fuck")
-  public async GetMore({ id, name, fuck }: GetQuery) {
+  @GET("get2/:fuck")
+  public async GetMore(@FromParams() params: GetQuery) {
+    const { id, name, fuck } = params;
     this.test02.add(345);
     this.test.reset(4534);
     // const env = this.configs.get(ENV);
