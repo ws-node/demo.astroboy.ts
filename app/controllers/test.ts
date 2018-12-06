@@ -50,8 +50,8 @@ class TestController {
   }
 
   @POST("post/:type")
-  public async Post(@Params("type") type, @Params("id") id2, @FromBody() body: PostData) {
-    const { id, name } = body;
+  public async Post(@FromParams() params, @FromBody() { id, name }: PostData) {
+    const { type, id: id2 } = params;
     return new JsonResult({
       id,
       name,
@@ -65,9 +65,8 @@ class TestController {
   }
 
   // @POST("post/:type")
-  // public async Post(@FromParams() params, @FromBody() body: PostData) {
+  // public async Post(@Params("type") type, @Params("id") id2, @FromBody() body: PostData) {
   //   const { id, name } = body;
-  //   const { type, id: id2 } = params;
   //   return new JsonResult({
   //     id,
   //     name,
