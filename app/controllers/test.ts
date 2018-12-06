@@ -3,7 +3,8 @@ import Test02Service from "../services/test02";
 import BusinessContext from "../services/business-context";
 import {
   Controller, Configs, AstroboyContext,
-  ENV, JsonResult, GET, POST, FromParams, FromBody
+  ENV, JsonResult, GET, POST, FromParams,
+  FromBody, Deserialize
 } from "astroboy.ts";
 import { STR_OPT } from "../../config/options/strOpt";
 import { DEMO_OPTIONS } from "../../config/options/demo";
@@ -23,6 +24,18 @@ interface GetQuery {
 interface PostData {
   id: number;
   name: string;
+}
+
+class ClassQuery {
+
+  @Deserialize()
+  readonly id: number;
+
+  @Deserialize()
+  readonly type: string;
+
+  @Deserialize()
+  readonly isTrue: boolean;
 }
 
 @Controller("test")
@@ -50,13 +63,14 @@ class TestController {
   }
 
   @POST("post/:type")
-  public async Post(@FromParams() params, @FromBody() { id, name }: PostData) {
-    const { type, id: id2 } = params;
+  public async Post(@FromParams() params: ClassQuery, @FromBody() { id, name }: PostData) {
+    const { type, id: id2, isTrue } = params;
     return new JsonResult({
       id,
       name,
       type,
       id2,
+      isTrue,
       config: {
         str_opt: this.configs.get(STR_OPT),
         demo_options: this.configs.get(DEMO_OPTIONS)
@@ -65,7 +79,7 @@ class TestController {
   }
 
   // @POST("post/:type")
-  // public async Post(@Params("type") type, @Params("id") id2, @FromBody() body: PostData) {
+  // public async Post(@Params("type") type: ClassQuery, @Params("id") id2, @FromBody() body: PostData) {
   //   const { id, name } = body;
   //   return new JsonResult({
   //     id,
