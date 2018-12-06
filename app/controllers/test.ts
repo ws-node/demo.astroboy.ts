@@ -94,7 +94,7 @@ class TestController {
   }
 
   // @POST("post/:type")
-  // public async Post(@Params("type") type: ClassQuery, @Params("id") id2, @FromBody() body: PostData) {
+  // public async Post(@Params("type") type, @Params("id") id2, @FromBody() body: PostData) {
   //   const { id, name } = body;
   //   return new JsonResult({
   //     id,
