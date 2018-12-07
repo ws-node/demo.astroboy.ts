@@ -4,7 +4,8 @@
   "description": "RT",
   "main": "index.js",
   "scripts": {
-    "start": "ast dev --ts --inspect=64001 --tsconfig ./tsconfig.json"
+    "start": "ast dev --ts --inspect=64001 --tsconfig ./tsconfig.npm.json",
+    "dev": "ast dev --ts --inspect=64001 --tsconfig ./tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
     "ts-node": "^7.0.1",
     "tslint": "5.11.0",
     "typescript": "3.2.1"
+  },
+  "dependencies": {
+    "astroboy.ts": "^1.0.1-rc.16"
   }
 }
