@@ -1,4 +1,4 @@
-const { BaseClass } = require("../../../astroboy-inject/dist/index");
+const { BaseClass } = require("../../../astroboy.ts/dist/index");
 const OldService = require("../services/old");
 
 class JsCOntroller extends BaseClass {

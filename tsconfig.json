@@ -5,10 +5,10 @@
     "baseUrl": "./",
     "paths": {
       "astroboy.ts": [
-        "../astroboy-inject/index.ts"
+        "../astroboy.ts/index.ts"
       ],
       "astroboy.ts/*": [
-        "../astroboy-inject/src/*"
+        "../astroboy.ts/src/*"
       ]
     }
   }

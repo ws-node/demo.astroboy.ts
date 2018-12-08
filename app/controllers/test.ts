@@ -2,6 +2,7 @@ import TestService from "../services/test";
 import Test02Service from "../services/test02";
 import BusinessContext from "../services/business-context";
 import DataService from "../services/Data";
+import MixinService from "../services/mixin";
 import {
   Controller, Configs, AstroboyContext,
   ENV, JsonResult, GET, POST, FromParams,
@@ -44,6 +45,7 @@ class TestController {
 
   constructor(
     private configs: Configs,
+    private mixin: MixinService,
     private base: AstroboyContext<{ fakeId: string; }>,
     private business: BusinessContext,
     private data: DataService,
@@ -100,6 +102,8 @@ class TestController {
     @Params("isTrue") isTrue: boolean,
     @FromBody() body: PostData) {
     const { id, name } = body;
+    this.mixin.add("222");
+    this.mixin.add(222);
     return new JsonResult({
       id,
       name,
@@ -110,6 +114,12 @@ class TestController {
       config: {
         str_opt: this.configs.get(STR_OPT),
         demo_options: this.configs.get(DEMO_OPTIONS)
+      },
+      mixin: {
+        stamp: this.mixin.stamp,
+        strOpt: this.mixin.ctx.getConfig("strOpt"),
+        testValue: this.mixin.showValue(1),
+        test02Value: this.mixin.showValue(2)
       }
     });
   }

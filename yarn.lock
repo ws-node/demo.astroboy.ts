@@ -277,8 +277,8 @@ astroboy-router@1.2.0-rc.1:
     reflect-metadata "^0.1.12"
 
 astroboy.ts@*:
-  version "1.0.1-rc.17"
-  resolved "https://registry.yarnpkg.com/astroboy.ts/-/astroboy.ts-1.0.1-rc.17.tgz#34f9d0a0ac7585d53b663c28c5d6863b3fc61181"
+  version "1.0.1-rc.20"
+  resolved "https://registry.yarnpkg.com/astroboy.ts/-/astroboy.ts-1.0.1-rc.20.tgz#1d8b8cde794b5f557eeb9119785566a8769a65ea"
   dependencies:
     "@bonbons/di" "1.3.3"
     "@types/camelcase" "4.1.0"
@@ -2581,7 +2581,7 @@ ts-node@^7.0.0, ts-node@^7.0.1:
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
-tsconfig-paths@^3.4.2:
+tsconfig-paths@^3.4.2, tsconfig-paths@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.7.0.tgz#02ae978db447b22e09dafcd4198be95c4885ceb2"
   dependencies:

@@ -29,11 +29,19 @@ class TestService {
     private inner: Test02Service) { }
 
   public reset(v: number) {
-    this.value += v;
+    this.value = v;
+  }
+
+  public add(v: string) {
+    this.value += Number(v);
   }
 
   public demoMethod2() {
     return this.thisValue + this.inner.showValue();
+  }
+
+  public showValue() {
+    return this.value;
   }
 
 }
