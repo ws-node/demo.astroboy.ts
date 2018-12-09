@@ -6,7 +6,7 @@ import MixinService from "../services/mixin";
 import {
   Controller, Configs, AstroboyContext,
   ENV, JsonResult, GET, POST, FromParams,
-  FromBody, Deserialize
+  FromBody, Deserialize, IContext
 } from "astroboy.ts";
 import { STR_OPT } from "../../config/options/strOpt";
 import { DEMO_OPTIONS } from "../../config/options/demo";
@@ -46,7 +46,7 @@ class TestController {
   constructor(
     private configs: Configs,
     private mixin: MixinService,
-    private base: AstroboyContext<{ fakeId: string; }>,
+    private base: AstroboyContext<IContext & { fakeId: string; }>,
     private business: BusinessContext,
     private data: DataService,
     private test: TestService,
