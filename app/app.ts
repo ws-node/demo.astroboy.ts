@@ -1,5 +1,5 @@
 import path from "path";
-import { Server, Astroboy, JSON_RESULT_OPTIONS, JsonResolvers } from "astroboy.ts";
+import { Server, Astroboy, JSON_RESULT_OPTIONS, JsonResolvers, ENV } from "astroboy.ts";
 import { DEMO_OPTIONS } from "../config/options/demo";
 import { STR_OPT } from "../config/options/strOpt";
 
@@ -14,6 +14,10 @@ import { STR_OPT } from "../config/options/strOpt";
 Server.Create(Astroboy, {
   ROOT_PATH: path.resolve(__dirname, "..")
 })
+  .option(ENV, {
+    routerRoot: "/v1",
+    routerAutoBuild: true
+  })
   .option(STR_OPT)
   .option(DEMO_OPTIONS)
   .option(JSON_RESULT_OPTIONS, { format: true, keyResolver: JsonResolvers.camelcase })
