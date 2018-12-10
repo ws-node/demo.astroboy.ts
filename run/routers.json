@@ -54,5 +54,13 @@
     ],
     "sec.sdc.dfc",
     "xxx"
+  ],
+  [
+    "GET",
+    [
+      "/v1/api/ddd/wfewf"
+    ],
+    "sec.sdc.sdads.ads",
+    "xxx"
   ]
 ]

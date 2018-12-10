@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "ast dev --ts --inspect=64001 --tsconfig tsconfig.npm.json",
-    "dev": "ast dev --ts --inspect=64001 --tsconfig tsconfig.json"
+    "dev": "ast dev --ts --inspect=64001 --tsconfig tsconfig.json",
+    "build": "tsc --project tsconfig.npm.json"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "typescript": "3.2.1"
   },
   "dependencies": {
-    "astroboy.ts": "*"
+    "astroboy.ts": "*",
+    "tslib": "1.9.3"
   }
 }
