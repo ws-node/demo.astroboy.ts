@@ -38,5 +38,21 @@
     ],
     "test",
     "GetMore"
+  ],
+  [
+    "GET",
+    [
+      "/v1/api/bbb/xxcdc"
+    ],
+    "sec.sxf",
+    "xxx"
+  ],
+  [
+    "GET",
+    [
+      "/v1/api/aaa/wfewf"
+    ],
+    "sec.sdc.dfc",
+    "xxx"
   ]
 ]
