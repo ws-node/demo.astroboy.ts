@@ -1,27 +1,4 @@
 // [astroboy.ts]自动生成的代码
-module.exports=[
-  [
-    "GET",
-    [
-      "/v1/api/test/get"
-    ],
-    "test",
-    "Get"
-  ],
-  [
-    "POST",
-    [
-      "/v1/api/test/post/:type"
-    ],
-    "test",
-    "Post"
-  ],
-  [
-    "GET",
-    [
-      "/v1/api/test/get2/:fuck"
-    ],
-    "test",
-    "GetMore"
-  ]
-];
+const CTOR = require('/Users/bigmogician/Documents/github.com/ws-node/demo.astroboy.ts/app/controllers/test')
+const { buildRouter } = require("astroboy.ts")
+module.exports = buildRouter(CTOR, "test", "/v1");
