@@ -3,9 +3,11 @@ build:
 	tsc --project tsconfig.npm.json
 	cp tsconfig.npm.json dist
 
+update:
+	yarn add astroboy.ts@latest
+
 start-dist:
 	cd dist && ast dev
 
 dev:
-	yarn add astroboy.ts@latest
 	yarn run dev
