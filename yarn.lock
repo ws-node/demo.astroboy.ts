@@ -276,9 +276,9 @@ astroboy-router@1.2.0-rc.1:
     lodash "^4.17.11"
     reflect-metadata "^0.1.12"
 
-astroboy.ts@^1.0.1-rc.25:
-  version "1.0.1-rc.25"
-  resolved "https://registry.yarnpkg.com/astroboy.ts/-/astroboy.ts-1.0.1-rc.25.tgz#10f7039ce705a3a798f5a657e6dd9e5df8e4b0b1"
+astroboy.ts@^1.0.1-rc.26:
+  version "1.0.1-rc.26"
+  resolved "https://registry.yarnpkg.com/astroboy.ts/-/astroboy.ts-1.0.1-rc.26.tgz#d5c9ae309f1186842bde2e4e9bd018db2e03fabf"
   dependencies:
     "@bonbons/di" "1.3.3"
     "@types/camelcase" "4.1.0"
