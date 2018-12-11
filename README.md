@@ -1,2 +1,2 @@
-# demo.astroboy.ts
-RT
+# demo of astroboy.ts
+最大兼容demo
