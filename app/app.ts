@@ -14,7 +14,7 @@ import { STR_OPT } from "../config/options/strOpt";
 Server.Create(Astroboy, {
   ROOT_PATH: path.resolve(__dirname, "..")
 })
-  .option(ROUTER_OPTIONS, { routerRoot: "/v1", routerAutoBuild: true, fileType: "ts" })
+  .option(ROUTER_OPTIONS, { appRoot: "/v1", enabled: true, fileType: "ts" })
   .option(STR_OPT)
   .option(DEMO_OPTIONS)
   .option(JSON_RESULT_OPTIONS, { format: true, keyResolver: JsonResolvers.camelcase })
