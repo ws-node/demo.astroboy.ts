@@ -5,3 +5,7 @@ build:
 
 start-dist:
 	cd dist && ast dev
+
+dev:
+	yarn add astroboy.ts@latest
+	yarn run dev
