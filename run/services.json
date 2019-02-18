@@ -2,6 +2,7 @@
   "demo.astroboy.ts": [
     "Data",
     "business-context",
+    "fac",
     "mixin",
     "old",
     "t01",

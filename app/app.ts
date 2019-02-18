@@ -2,6 +2,7 @@ import path from "path";
 import { Server, Astroboy, JSON_RESULT_OPTIONS, JsonResolvers, ROUTER_OPTIONS, SIMPLE_LOGGER_OPTIONS } from "astroboy.ts";
 import { DEMO_OPTIONS } from "../config/options/demo";
 import { STR_OPT } from "../config/options/strOpt";
+import FactoryService from "./services/fac";
 
 // new Astroboy({
 //   ROOT_PATH: path.resolve(__dirname, "..")
@@ -14,6 +15,7 @@ import { STR_OPT } from "../config/options/strOpt";
 Server.Create(Astroboy, {
   ROOT_PATH: path.resolve(__dirname, "..")
 })
+  .scoped(FactoryService, FactoryService.factory)
   .option(ROUTER_OPTIONS, { appRoot: "/v1", enabled: true, fileType: "ts" })
   .option(STR_OPT)
   .option(DEMO_OPTIONS)

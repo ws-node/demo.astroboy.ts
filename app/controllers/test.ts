@@ -3,6 +3,7 @@ import Test02Service from "../services/test02";
 import BusinessContext from "../services/business-context";
 import DataService from "../services/Data";
 import MixinService from "../services/mixin";
+import FactoryService from "../services/fac";
 import {
   Controller, Configs, AstroboyContext,
   ENV, JsonResult, GET, POST, FromParams,
@@ -50,6 +51,7 @@ class TestController {
     private business: BusinessContext,
     private data: DataService,
     private test: TestService,
+    private facSrv: FactoryService,
     private test02: Test02Service) {
 
   }
@@ -62,6 +64,7 @@ class TestController {
     return new JsonResult({
       id,
       name,
+      facData: this.facSrv.data,
       url: ctx.url,
     });
   }
