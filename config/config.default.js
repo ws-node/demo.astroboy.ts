@@ -7,7 +7,7 @@ module.exports = {
 
   "@astroboy.ts": {
     showTrace: true,
-    diType: "proxy"
+    // diType: "proxy"
   },
 
   demo: {

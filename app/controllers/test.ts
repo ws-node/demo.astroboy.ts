@@ -4,6 +4,7 @@ import BusinessContext from "../services/business-context";
 import DataService from "../services/Data";
 import MixinService from "../services/mixin";
 import FactoryService from "../services/fac";
+import NewSingleton from "../services/new-singleton";
 import {
   Controller, Configs, AstroboyContext,
   ENV, JsonResult, GET, POST, FromParams,
@@ -52,6 +53,7 @@ class TestController {
     private data: DataService,
     private test: TestService,
     private facSrv: FactoryService,
+    private newSingleton: NewSingleton,
     private test02: Test02Service) {
 
   }
@@ -61,6 +63,7 @@ class TestController {
     const { ctx } = this.base;
     const { id, name } = params;
     ctx.type = "application/json";
+    this.newSingleton.test();
     return new JsonResult({
       id,
       name,

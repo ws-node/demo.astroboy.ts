@@ -4,6 +4,7 @@
     "business-context",
     "fac",
     "mixin",
+    "new-singleton",
     "old",
     "t01",
     "t02",
