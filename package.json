@@ -26,7 +26,8 @@
     "typescript": "3.2.1"
   },
   "dependencies": {
-    "astroboy.ts": "^1.0.11-rc.10",
+    "astroboy": "^0.0.38",
+    "astroboy.ts": "^1.1.3-rc.2",
     "tslib": "1.9.3"
   }
 }

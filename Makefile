@@ -10,4 +10,5 @@ start-dist:
 	cd dist && ast dev
 
 dev:
+	npx atc router --filetype ts --approot /v1
 	yarn run dev
