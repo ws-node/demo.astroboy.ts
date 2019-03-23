@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "astroboy": "^0.0.38",
-    "astroboy.ts": "^1.1.3-rc.2",
+    "astroboy.ts": "^1.1.3-rc.36",
     "tslib": "1.9.3"
   }
 }
